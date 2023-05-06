@@ -4,5 +4,5 @@ insert into user_account (user_id, user_password, role_types, nickname, email, m
  ('uno', '{noop}1234', 'ADMIN', 'Uno', 'uno@mail.com', 'I am Uno.', now(), 'uno', now(), 'uno'),
  ('mark', '{noop}1234', 'MANAGER', 'Mark', 'mark@mail.com', 'I am Mark.', now(), 'uno', now(), 'uno'),
  ('susan', '{noop}1234', 'MANAGER,DEVELOPER', 'Susan', 'Susan@mail.com', 'I am Susan.', now(), 'uno', now(), 'uno'),
- ('jim', '{noop}1234', 'USER', 'Jim', 'jim@mail.com', 'I am Jim.', now(), 'uno', now(), 'uno')
+ ('jim', '{noop}as1234', 'USER', 'Jim', 'jim@mail.com', 'I am Jim.', now(), 'uno', now(), 'uno')
 ;
