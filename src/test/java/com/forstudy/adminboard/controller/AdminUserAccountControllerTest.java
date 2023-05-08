@@ -19,9 +19,7 @@ class AdminUserAccountControllerTest {
 
     private final MockMvc mvc;
 
-    public AdminUserAccountControllerTest(@Autowired MockMvc mvc) {
-        this.mvc = mvc;
-    }
+    public AdminUserAccountControllerTest(@Autowired MockMvc mvc) { this.mvc = mvc; }
 
     @DisplayName("[view][GET] 어드민 회원 페이지 - 정상 호출")
     @Test
