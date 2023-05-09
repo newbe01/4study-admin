@@ -1,5 +1,6 @@
 package com.forstudy.adminboard.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -15,8 +16,10 @@ public class ArticleCommentManagementController {
     @GetMapping
     public String articleComment(
             @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable,
+            HttpServletRequest request,
             Model model
     ) {
+        model.addAttribute("request", request);
         return "management/articleComments";
     }
 }
