@@ -1,7 +1,7 @@
 package com.forstudy.adminboard.dto.security;
 
 import com.forstudy.adminboard.domain.constant.RoleType;
-import com.forstudy.adminboard.dto.UserAccountDto;
+import com.forstudy.adminboard.dto.AdminAccountDto;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,7 +22,7 @@ public record BoardAdminPrincipal(
         Map<String, Object> oAuth2Attributes
 ) implements UserDetails, OAuth2User {
 
-    public static BoardAdminPrincipal of(String username, String password, Set<RoleType> roleTypes,  String email, String nickname, String memo) {
+    public static BoardAdminPrincipal of(String username, String password, Set<RoleType> roleTypes, String email, String nickname, String memo) {
         return BoardAdminPrincipal.of(username, password, roleTypes, email, nickname, memo, Map.of());
     }
 
@@ -42,7 +42,7 @@ public record BoardAdminPrincipal(
         );
     }
 
-    public static BoardAdminPrincipal from(UserAccountDto dto) {
+    public static BoardAdminPrincipal from(AdminAccountDto dto) {
         return BoardAdminPrincipal.of(
                 dto.userId(),
                 dto.userPassword(),
@@ -53,14 +53,15 @@ public record BoardAdminPrincipal(
         );
     }
 
-    public UserAccountDto toDto() {
-        return UserAccountDto.of(
+    public AdminAccountDto toDto() {
+        return AdminAccountDto.of(
                 username,
                 password,
                 authorities.stream()
                         .map(GrantedAuthority::getAuthority)
                         .map(RoleType::valueOf)
-                        .collect(Collectors.toUnmodifiableSet()),
+                        .collect(Collectors.toUnmodifiableSet())
+                ,
                 email,
                 nickname,
                 memo
