@@ -1,7 +1,6 @@
 package com.forstudy.adminboard.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.forstudy.adminboard.domain.constant.RoleType;
 import com.forstudy.adminboard.dto.ArticleDto;
 import com.forstudy.adminboard.dto.UserAccountDto;
 import com.forstudy.adminboard.dto.properties.ProjectProperties;
@@ -22,7 +21,6 @@ import org.springframework.test.web.client.MockRestServiceServer;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.method;
